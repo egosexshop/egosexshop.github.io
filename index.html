@@ -1,10 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ego</title>
-</head>
-<body>
-  <h1>Hello, World</h1>
-</body>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ego - Sex Shop Online en Rosario</title>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon-alpha.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32-alpha.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16-alpha.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/static.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+
+<body onkeydown="keypressed(event);" onload="tada();" onscroll="scrollhandler();">
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="centerinside">
+    <img fetchpriority="high" src="assets/images/ego.svg" style="margin-bottom:20px;width:20%">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal" onclick="closemodal();">
+    <div class="modal-content clickable" data-kind="SKIP" onclick="bodyhandler(event);" style="display: flex ; flex-direction: column; max-width: calc(min(95%, calc(var(--modalexpr) + var(--modaldescwidth))));">
+      <i class="fa fa-times" style="font-size:25px;" id="close-btn" onclick="closemodal();"></i>
+      <div id="modal-title">
+      </div>
+      <div id="modal-cart">
+        <div id="noproductstext">
+          Aún no hay productos en el carrito.
+        </div>
+        <div id="productsdetail" style="display:none">
+          <div id="productslist">
+          </div>
+        <div onclick="checkout(event)" style="display:flex;justify-content: space-between; padding: 0px 10px;">
+          <div id="carttotal">
+          </div>
+          <a href="#" style="margin:auto 0px; text-align: right;">
+            Finalizar pedido por WhatsApp
+          </a>
+        </div>
+        </div>
+      </div>
+      <div id="modal-info">
+        <div id="modal-inner-info">
+          <div id="modaldetailsdiv">
+            <div style="z-index: 1; position:absolute;">
+              <i id="modal-star" class="fa fa-star star" style="font-size: 25px;"></i>
+            </div>
+            <img src="assets/images/ducha.png" id="modal-img" >
+            <div class="centerinside" id="modalprodprice">
+              <div id="modal-price">
+              </div>
+              <div class="pmanagediv clickable" data-kind="SKIP" id="modal-pmanagediv">
+                <a href="#" class="fgbutton clickable modalbtn" data-kind="remove" style="display: none;" id="modal-remove">-</a>
+                <div class="pqtydiv modalbtn" style="display: none;"></div>
+                <a href="#" class="fgbutton clickable modalbtn" data-kind="add" id="modal-add"></a>
+              </div>
+            </div>
+          </div>
+          <div id="modal-description">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Structure End -->
+
+  <div id="homesection" style="position:relative;">
+    <div style="position:absolute; z-index:1; top:50%; left:50%; transform: translate(82px, -45px);">
+      <img id="beatingheart" fetchpriority="high" src="assets/images/heart.svg" >
+    </div>
+  <img id="egobanner" fetchpriority="high" src="assets/images/egobannernoheart.svg">
+  </div>
+
+  <div class="headerheight" id="headerph" style="display:none">
+  </div>
+  <header class="header-area headerheight">
+    <nav class="main-nav" style="height:100%; display:block; ">
+      <div style="display:flex; height:100%;">
+      <div style="display:flex; float:left; height:100%; flex:0;">
+        <a href="#" class="logo" style="height: 100%; display: flex; align-items: center;">
+          <img fetchpriority="high" src="assets/images/ego.svg" id="egotextheader">
+        </a>
+        <div style="padding-left: 15px; float:left; display:flex;">
+            <a href="#" onclick="showcart(event);">
+              <div class="centerinside" style="padding-top:2px; color:#2c2c2c; width: max-content">
+              <i class="fa fa-shopping-cart" style="font-size:35px"></i>
+              <div style="font-size:12px" id="cart-summary">
+                $0 (0)
+              </div>
+              </div>
+            </a>
+        </div>
+      </div>
+      <div id="navtext">
+        <div id="navtextinner">
+        </div>
+      </div>
+      <ul id="navcontainer">
+        <li><a href="#searchsect"><i class="fa fa-search"></i></a></li>
+        <li><a href="#destacados">Destacados</a></li>
+      </ul> 
+      <a id='menu-trigger' onclick="menutriggerclick(event);">
+        <span></span>
+      </a>
+      </div>
+      <ul id="navsmall">
+        <li><a href="#searchsect"><i class="fa fa-search"></i></a></li>
+        <li><a href="#destacados">Destacados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div id="egodescription" class="centerinside">
+      <div>
+        Sex shop online en Rosario.
+      </div>
+      <div style="text-align:center;">
+        Hacé tu pedido en esta página o <a style="color:#b380cc;" href="https://wa.me/5493416944779" rel="noopener noreferrer" target="_blank">escribinos</a>.
+      </div>
+    </div>
+  <div id="categories" onclick="bodyhandler(event);">
+    <div class="categorydiv" id="searchsect">
+        <hr/>
+        <div class="search-container">
+          <form onsubmit="performSearch(); return false;" style="display: flex; max-width: 500px; width: 100%;">
+            <input type="text" placeholder="Buscar.." id="searchtxt" style="flex:1; min-width:0;">
+            <button type="submit" style="flex-shrink: 0;"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <div class="categoryinnerdiv" id="searchinner" style="display:none;">
+        </div>
+    </div>
+    <div class="categorydiv" id="destacados">
+      <hr>
+      Destacados
+      <i class="fa fa-star star" style="font-size:20px; padding:0px;"></i>
+      <div class="categoryinnerdiv" id="destacadosinner">
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:10px 30px; height:fit-content; display: flex; justify-content: space-between;" id="footertop">
+    <div id="footerrights">
+      <img fetchpriority="high" src="assets/images/ego.svg" style="width:100px;">
+    </div>
+    <div style="height:100%" id="footercontact">
+      <div style="display:inline-block;height:100%;" id="seguinos">
+        <div class="footertext">
+          Seguinos
+        </div>
+        <a href="https://www.instagram.com/egosexshop/" target="_blank" rel="noopener noreferrer" style="color:#2c2c2c">
+          <div class="rightstext" style="text-align:center">
+            <img src="assets/images/ig.svg" style="width:15px; display:inline-block; position:relative; top:3px;">
+            egosexshop
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/code.js" defer></script>
+  <script>
+    function tada() {
+      document.getElementById("js-preloader").classList.add('loaded');
+    }
+    window.setTimeout(tada, 7000);
+  </script>
+
+
+  </body>
 </html>
