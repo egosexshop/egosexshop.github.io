@@ -43,16 +43,21 @@
       <div id="modal-title">
       </div>
       <div id="modal-cart">
-        <div id="noproductstext">
+        <div id="noproductstext" style="margin:20px;">
           Aún no hay productos en el carrito.
         </div>
         <div id="productsdetail" style="display:none">
           <div id="productslist">
           </div>
-        <div onclick="checkout(event)" style="display:flex;justify-content: space-between; padding: 0px 10px;">
-          <div id="carttotal">
+        <div style="display:flex;justify-content: space-between; padding: 0px 10px;">
+          <div>
+            <div id="carttotal">
+            </div>
+            <div onclick="emptycart(event)" style="cursor:pointer; color:#e82e2e;">
+            Vaciar carrito
+            </div>
           </div>
-          <a href="#" style="margin:auto 0px; text-align: right;">
+          <a onclick="checkout(event)" href="#" style="text-align: right;">
             Finalizar pedido por WhatsApp
           </a>
         </div>

@@ -120,6 +120,15 @@ function updatecartUI() {
   cartTotal.textContent = "Total: $" + totalprice.toLocaleString();
 }
 
+function emptycart() {
+  oldcart = cart;
+  cart = [];
+  for (pid in oldcart) {
+    updateProdUI(pid);
+  }
+  updatecartUI();
+}
+
 function addhandler(pid) {
   cart[pid] = (pid in cart?cart[pid]:0) + 1;
   updateProdUI(pid);
