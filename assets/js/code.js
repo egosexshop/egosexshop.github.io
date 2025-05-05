@@ -586,9 +586,7 @@ function transformAndGroup(products) {
 }
 
 function loadData() {
-  console.log(data);
   newdata = transformAndGroup(data["data"]);
-  console.log(newdata);
   for (var category of newdata) {
     createnavbarentry(category);
     createbodyentry(category);
