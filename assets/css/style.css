@@ -19,6 +19,11 @@ nav li {
   text-align: center;
 }
 
+.categorytitle {
+  line-height: 20px;
+  font-family: "PT Sans", sans-serif;
+}
+
 /* Modal Styles */
 .modal {
   display: none;

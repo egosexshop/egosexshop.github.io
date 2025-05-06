@@ -363,8 +363,11 @@ function createcategorydiv(category) {
   newdiv.id = category.name
   const newhr = document.createElement("hr");
   newdiv.appendChild(newhr);
-  const linkText = document.createTextNode(category.name);
-  newdiv.appendChild(linkText);
+  const nametext = document.createTextNode(category.name);
+  const namediv = document.createElement("div");
+  namediv.classList.add("categorytitle")
+  namediv.appendChild(nametext);
+  newdiv.appendChild(namediv);
   const innerdiv = document.createElement("div");
   innerdiv.classList.add("categoryinnerdiv")
   newdiv.appendChild(innerdiv);
