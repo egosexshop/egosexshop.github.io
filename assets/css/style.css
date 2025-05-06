@@ -20,7 +20,12 @@ nav li {
 }
 
 .categorytitle {
+  font-weight: bold;
   line-height: 20px;
+  font-family: "PT Sans", sans-serif;
+}
+
+#searchtxt {
   font-family: "PT Sans", sans-serif;
 }
 
@@ -151,6 +156,7 @@ nav li {
 }
 
 #navcontainer {
+  font-family: "PT Sans", sans-serif;
   height:100%;
   width:initial;
   float:right;
@@ -293,6 +299,7 @@ nav li {
 }
 
 #navtext {
+  font-family: "PT Sans", sans-serif;
   flex:1;
   text-align:center;
   padding-right:80px;
@@ -302,6 +309,7 @@ nav li {
 }
 
 #navsmall {
+  font-family: "PT Sans", sans-serif;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease;
